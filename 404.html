@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CineLos | Filmová Ruleta</title>
+    <script>
+      (function() {
+        var p = window.location.pathname;
+        if (p.includes('/docs')) {
+          window.location.replace('./');
+        } else {
+          var target = p.endsWith('index.html')
+            ? p.replace(/index\.html$/, 'docs/')
+            : (p.replace(/\/+$/, '') + '/docs/');
+          window.location.replace(target + window.location.search + window.location.hash);
+        }
+      })();
+    </script>
+  </head>
+  <body style="background-color: #0a0a0a; color: #ededed; font-family: system-ui, -apple-system, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; text-align: center; padding: 1rem;">
+    <h1 style="font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: 700;">CineLos | Filmová Ruleta</h1>
+    <p style="color: #a3a3a3; font-size: 0.95rem; margin-bottom: 1.5rem;">Načítám filmovou aplikaci...</p>
+    <a href="./docs/" style="padding: 0.6rem 1.2rem; background-color: #f59e0b; color: #0a0a0a; border-radius: 0.5rem; font-weight: 600; text-decoration: none; font-size: 0.875rem;">Otevřít CineLos</a>
+  </body>
+</html>
