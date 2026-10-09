@@ -6,6 +6,7 @@ import { TrioDuel } from './components/TrioDuel';
 import { CatalogView } from './components/CatalogView';
 import { WatchlistView } from './components/WatchlistView';
 import { TrailerModal } from './components/TrailerModal';
+import { GithubModal } from './components/GithubModal';
 import { Footer } from './components/Footer';
 import { MOVIES_DATABASE } from './data/movies';
 import { Movie, FilterState, UserMovieRecord, MovieGenre } from './types';
@@ -17,6 +18,7 @@ export default function App() {
   const [activeTab, setActiveTab] = React.useState<'roulette' | 'trio' | 'catalog' | 'watchlist'>('roulette');
   const [selectedMovie, setSelectedMovie] = React.useState<Movie | null>(null);
   const [trailerMovie, setTrailerMovie] = React.useState<Movie | null>(null);
+  const [githubModalOpen, setGithubModalOpen] = React.useState(false);
 
   const [filters, setFilters] = React.useState<FilterState>({
     genre: 'Všechny',
@@ -295,8 +297,17 @@ export default function App() {
         onClose={() => setTrailerMovie(null)}
       />
 
+      {/* GitHub Pages & HTML Guide Modal */}
+      <GithubModal
+        isOpen={githubModalOpen}
+        onClose={() => setGithubModalOpen(false)}
+      />
+
       {/* Footer */}
-      <Footer onNavigate={setActiveTab} />
+      <Footer
+        onNavigate={setActiveTab}
+        onOpenGithubModal={() => setGithubModalOpen(true)}
+      />
     </div>
   );
 }

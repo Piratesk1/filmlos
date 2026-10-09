@@ -3,9 +3,10 @@ import { Film } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (tab: 'roulette' | 'trio' | 'catalog' | 'watchlist') => void;
+  onOpenGithubModal?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
+export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenGithubModal }) => {
   return (
     <footer className="border-t border-neutral-800/80 bg-neutral-950 mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
@@ -48,6 +49,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           >
             Můj seznam
           </button>
+          {onOpenGithubModal && (
+            <button
+              onClick={onOpenGithubModal}
+              className="text-amber-400 hover:text-amber-300 transition-colors cursor-pointer"
+            >
+              GitHub Pages (HTML)
+            </button>
+          )}
         </nav>
 
         <p className="text-xs text-neutral-600 font-mono">
