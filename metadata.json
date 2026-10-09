@@ -1,0 +1,6 @@
+{
+  "name": "CineLos | Filmová Ruleta & Databáze",
+  "description": "Vylosujte si perfektní film podle žánru a hodnocení z bohaté filmové databáze s trailery a streamovacími tipy.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
